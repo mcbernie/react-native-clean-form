@@ -4,6 +4,8 @@ import { FormGroup, Label } from '../../index'
 import styled from 'styled-components/native'
 import defaultTheme from '../Theme'
 
+import PropTypes from 'prop-types';
+
 const ErrorMessage = styled.Text`
   color: ${props => props.theme.ErrorMessage.color};
   fontSize: ${props => props.theme.ErrorMessage.fontSize};
@@ -30,7 +32,7 @@ const render = renderComponent => props => {
 }
 
 
-const createInputCreator = ReduxFormFieldComponent => (name, renderFunction, PropTypes = {}, defaultProps = {}) => {
+const createInputCreator = ReduxFormFieldComponent => (name, renderFunction, PropTypesA = {}, defaultProps = {}) => {
   const Component = render(renderFunction)
   Component.displayName = name
 
@@ -42,11 +44,11 @@ const createInputCreator = ReduxFormFieldComponent => (name, renderFunction, Pro
 
   FieldWrapper.displayName = 'FieldWrapper'
   FieldWrapper.PropTypes = Object.assign({
-    border: React.PropTypes.bool,
-    inlineLabel: React.PropTypes.bool,
-    label: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired
-  }, PropTypes)
+    border: PropTypes.bool,
+    inlineLabel: PropTypes.bool,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }, PropTypesA)
   FieldWrapper.defaultProps = Object.assign({
     border: FormGroup.defaultProps.border,
     inlineLabel: FormGroup.defaultProps.inlineLabel

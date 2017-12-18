@@ -11,6 +11,8 @@ import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import defaultTheme from './Theme'
 
+import PropTypes from 'prop-types';
+
 const ButtonWrapper = styled.View`
   flex:1;
   align-self: stretch;
@@ -96,10 +98,10 @@ const Button = props => {
 }
 
 Button.PropTypes = {
-  children: React.PropTypes.string.isRequired,
-  icon: React.PropTypes.string,
-  iconPlacement: React.PropTypes.oneOf(['left', 'right']),
-  submitting: React.PropTypes.bool
+  children: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  iconPlacement: PropTypes.oneOf(['left', 'right']),
+  submitting: PropTypes.bool
 }
 
 Button.defaultProps = {

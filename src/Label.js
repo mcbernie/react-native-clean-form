@@ -3,6 +3,8 @@ import { Text, View, Platform } from 'react-native'
 import styled from 'styled-components/native'
 import defaultTheme from './Theme'
 
+import PropTypes from 'prop-types';
+
 const LabelWrapper = styled.View`
   flex: ${props => props.inlineLabel ? 0.5 : 1};
   flex-direction: ${props => props.inlineLabel ? 'row' : 'column'};
@@ -33,7 +35,7 @@ const Label = props => {
 }
 
 Label.PropTypes = {
-  children: React.PropTypes.string.isRequired
+  children: PropTypes.string.isRequired
 }
 
 export default Label
