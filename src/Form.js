@@ -25,11 +25,13 @@ class Form extends Component {
 
     return (
       <View style={{ flex: 1 }} onLayout={this.onLayout}>
-        <KeyboardAvoidingView behavior="padding">
+
         <ScrollView contentContainerStyle={{ minHeight: this.state.height }}>
+          <KeyboardAvoidingView behavior="padding">
             { children }
+          </KeyboardAvoidingView>
         </ScrollView>
-        </KeyboardAvoidingView>
+
       </View>
     )
   }
