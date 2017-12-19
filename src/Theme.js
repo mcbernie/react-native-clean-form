@@ -2,7 +2,7 @@ const Theme = {
   Button: {
     backgroundColor: '#4286dd',
     color: '#fff',
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: 700,
     height: 45
   },
@@ -16,7 +16,7 @@ const Theme = {
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
     labelColor: '#909090',
-    labelSize: 9,
+    labelSize: 14,
     labelWeight: 700,
     labelHeight: 25,
     paddingTop: 12,
@@ -39,7 +39,7 @@ const Theme = {
   },
   BaseInput: {
     placeholderColor: '#c9c9c9',
-    fontSize: 14,
+    fontSize: 16,
     lineHeight: 18
   },
   Input: {
@@ -47,7 +47,7 @@ const Theme = {
   },
   Label: {
     color: '#bfc2c9',
-    fontSize: 14,
+    fontSize: 16,
     stackedHeight: 40
   },
   Select: {
