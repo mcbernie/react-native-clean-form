@@ -11,7 +11,6 @@ import styled from 'styled-components/native'
 import { default as BaseIcon } from 'react-native-vector-icons/Ionicons';
 import defaultTheme from './Theme'
 
-import PropTypes from 'prop-types';
 
 // TODO: FIXME
 const HaveNoIdeaWhyThisIsNeeded=3

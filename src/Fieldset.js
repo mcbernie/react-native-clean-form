@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import defaultTheme from './Theme'
 
-import PropTypes from 'prop-types';
-
 const FieldsetLabelText = styled.Text`
   color: ${props => props.theme.Fieldset.labelColor };
   fontSize: ${props => props.theme.Fieldset.labelSize };

@@ -5,8 +5,6 @@ import styled from 'styled-components/native'
 import _ from 'lodash'
 import defaultTheme from './Theme'
 
-import PropTypes from 'prop-types';
-
 /**
  * Calculate the height based on the given field properties.
  * The inline label and multiline properties affect the height.

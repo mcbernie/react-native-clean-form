@@ -5,8 +5,6 @@ import { FormGroup, Label } from '../../index'
 import styled from 'styled-components/native'
 import defaultTheme from '../Theme'
 
-import PropTypes from 'prop-types';
-
 const ErrorMessage = styled.Text`
   color: ${props => props.theme.ErrorMessage.color};
   fontSize: ${props => props.theme.ErrorMessage.fontSize};

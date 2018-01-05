@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import defaultTheme from './Theme'
 
-import PropTypes from 'prop-types';
 /**
  * Calculates the flex value based on the inlineLabel and numberOfLines
  * properties.

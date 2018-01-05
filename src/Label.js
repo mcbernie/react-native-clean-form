@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import defaultTheme from './Theme'
 
-import PropTypes from 'prop-types';
-
 const LabelWrapper = styled.View`
   flex: ${props => props.inlineLabel ? 0.5 : 1};
   flex-direction: ${props => props.inlineLabel ? 'row' : 'column'};
