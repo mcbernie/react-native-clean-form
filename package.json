@@ -1,6 +1,6 @@
 {
   "name": "react-native-clean-form",
-  "version": "master",
+  "version": "0.0.5",
   "description": "An example of creating mobile forms with React Native, styled-components and redux-form",
   "main": "index.js",
   "directories": {
@@ -21,9 +21,9 @@
   "author": "Esben Petersen <esbenspetersen@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/esbenp/react-native-clean-form/issues"
+    "url": "https://github.com/mcbernie/react-native-clean-form/issues"
   },
-  "homepage": "https://github.com/esbenp/react-native-clean-form#readme",
+  "homepage": "https://github.com/mcbernie/react-native-clean-form#readme",
   "files": [
     "src",
     "redux-form.js",
