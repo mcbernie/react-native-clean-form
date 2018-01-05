@@ -12,8 +12,6 @@ import PropTypes from 'prop-types'
 import Icon from 'react-native-vector-icons/Ionicons'
 import defaultTheme from './Theme'
 
-import PropTypes from 'prop-types';
-
 const ButtonWrapper = styled.View`
   flex:1;
   align-self: stretch;
