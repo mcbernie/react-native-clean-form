@@ -24,13 +24,13 @@ class Form extends Component {
     const { children, ...rest } = this.props
 
     return (
-      <View style={{ flex: 1 }} onLayout={this.onLayout}>
-        <KeyboardAvoidingView behavior="padding">
-          <ScrollView contentContainerStyle={{ minHeight: this.state.height }}>
-            { children }            
-          </ScrollView>
-        </KeyboardAvoidingView>
-      </View>
+      <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={50} onLayout={this.onLayout} style={{ flex: 1 }} >
+        <ScrollView 
+          contentContainerStyle={{ minHeight: this.state.height }} 
+          >
+          { children }            
+        </ScrollView>
+      </KeyboardAvoidingView>
     )
   }
 }

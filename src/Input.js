@@ -73,6 +73,11 @@ class Input extends React.Component {
         multiline={this.props.multiline}
         numberOfLines={this.props.numberOfLines}>
         <StyledInput
+          ref={ref => {
+            if (this.props.inputRef && ref) {
+              this.props.inputRef(ref);
+            }
+          }}
           inlineLabel={this.props.inlineLabel}
           placeholderTextColor={this.props.theme.BaseInput.placeholderColor}
           {...this.props}/>
@@ -83,13 +88,15 @@ class Input extends React.Component {
 
 Input.PropTypes = {
   ...TextInput.propTypes,
-  inlineLabel: PropTypes.bool.isRequired
+  inlineLabel: PropTypes.bool.isRequired,
+  inputRef: PropTypes.func,
 }
 
 Input.defaultProps = {
   componentName: 'Input',
   inlineLabel: true,
-  theme: defaultTheme
+  theme: defaultTheme,
+  inputRef: null,
 }
 
 export default Input

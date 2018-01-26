@@ -11,6 +11,7 @@ import styled from 'styled-components/native'
 import { default as BaseIcon } from 'react-native-vector-icons/Ionicons';
 import defaultTheme from './Theme'
 
+import {OptionsModal} from './Dropdown';
 
 // TODO: FIXME
 const HaveNoIdeaWhyThisIsNeeded=3
@@ -85,9 +86,9 @@ class Select extends Component {
   onValueChange(newValue) {
     this.setState({
       showSelector: false,
-      value: newValue
+      value: newValue.value
     }, () => {
-      this.props.onValueChange(newValue)
+      this.props.onValueChange(newValue.value)
     })
   }
 
@@ -114,9 +115,9 @@ class Select extends Component {
       label = labelsByValue[value]
     }
 
-    return (
-      <SelectWrapper inlineLabel={inlineLabel} theme={theme}>
-        <Modal
+
+    /*
+            <Modal
           onRequestClose={this.toggleSelector}
           visible={showSelector}
         >
@@ -131,7 +132,18 @@ class Select extends Component {
               return <Picker.Item key={value} label={label} value={value} />
             }) }
           </Picker>
-        </Modal>
+        </Modal>*/
+
+    return (
+
+      
+      <SelectWrapper inlineLabel={inlineLabel} theme={theme}>
+        <OptionsModal 
+          onShow={this.toggleSelector} 
+          isShowingOptions={showSelector}
+          onSelect={this.onValueChange} 
+          options={options}
+        />
         <TouchableOpacity onPress={this.toggleSelector}>
           <LabelIconWrapper inlineLabel={inlineLabel}>
             <SelectLabel inlineLabel={inlineLabel}>{ label }</SelectLabel>
