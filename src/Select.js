@@ -5,14 +5,15 @@ import {
   Text,
   TouchableOpacity,
   View,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Platform
 } from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import { default as BaseIcon } from 'react-native-vector-icons/Ionicons';
 import defaultTheme from './Theme'
 
-import {OptionsModal} from './Dropdown';
+//import {OptionsModal} from './Dropdown';
 
 // TODO: FIXME
 const HaveNoIdeaWhyThisIsNeeded=3
@@ -116,53 +117,81 @@ class Select extends Component {
       label = labelsByValue[value]
     }
 
-    return (
-      <SelectWrapper inlineLabel={inlineLabel} theme={theme}>
+    if(Platform.OS === "ios") {
+      return (
+        <SelectWrapper inlineLabel={inlineLabel} theme={theme}>
 
-        <Modal
-          onRequestClose={this.toggleSelector}
-          visible={showSelector}
-          transparent={true}
-        >
-        <TouchableWithoutFeedback onPress={this.toggleSelector}>
-          <View style={{flex: 1,
-                backgroundColor: 'rgba(129, 133, 130, 0.5)',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'row'}}>
-            <View style={{ 
-              paddingLeft: 10, 
-              paddingRight: 10, 
-              flex: 1, 
-              backgroundColor: 'white', 
-              borderTopWidth: 1,
-              borderTopColor: 'black',
-              borderBottomWidth: 1,
-              borderBottomColor: 'black' }} >
-              <Picker
-                  selectedValue={value}
-                  onValueChange={this.onValueChange}
-                  {...rest} 
-                >
-                { options.map(option => {
-                  const label = option[labelKey]
-                  const value = option[valueKey]
-                  return <Picker.Item key={value} label={label} value={value} />
-                }) }
-              </Picker>
+          <Modal
+            onRequestClose={this.toggleSelector}
+            visible={showSelector}
+            transparent={true}
+          >
+          <TouchableWithoutFeedback onPress={this.toggleSelector}>
+            <View style={{flex: 1,
+                  backgroundColor: 'rgba(129, 133, 130, 0.5)',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexDirection: 'row'}}>
+              <View style={{ 
+                paddingLeft: 10, 
+                paddingRight: 10, 
+                flex: 1, 
+                backgroundColor: 'white', 
+                borderTopWidth: 1,
+                borderTopColor: 'black',
+                borderBottomWidth: 1,
+                borderBottomColor: 'black' }} >
+                <Picker
+                    selectedValue={value}
+                    onValueChange={this.onValueChange}
+                    {...rest} 
+                  >
+                  { options.map(option => {
+                    const label = option[labelKey]
+                    const value = option[valueKey]
+                    return <Picker.Item key={value} label={label} value={value} />
+                  }) }
+                </Picker>
+              </View>
             </View>
-          </View>
-        </TouchableWithoutFeedback>
-        </Modal>
-        
-        <TouchableOpacity onPress={this.toggleSelector}>
-          <LabelIconWrapper inlineLabel={inlineLabel}>
-            <SelectLabel inlineLabel={inlineLabel}>{ label }</SelectLabel>
-            <Icon name="ios-arrow-down" />
-          </LabelIconWrapper>
-        </TouchableOpacity>
-      </SelectWrapper>
-    )
+          </TouchableWithoutFeedback>
+          </Modal>
+          
+          <TouchableOpacity onPress={this.toggleSelector}>
+            <LabelIconWrapper inlineLabel={inlineLabel}>
+              <SelectLabel inlineLabel={inlineLabel}>{ label }</SelectLabel>
+              <Icon name="ios-arrow-down" />
+            </LabelIconWrapper>
+          </TouchableOpacity>
+        </SelectWrapper>
+      )
+    }else{
+      return (
+        <SelectWrapper inlineLabel={inlineLabel} theme={theme}>
+
+          
+                <Picker
+                    selectedValue={value}
+                    onValueChange={this.onValueChange}
+                    {...rest} 
+                  >
+                  { options.map(option => {
+                    const label = option[labelKey]
+                    const value = option[valueKey]
+                    return <Picker.Item key={value} label={label} value={value} />
+                  }) }
+                </Picker>
+
+          
+          <TouchableOpacity onPress={this.toggleSelector}>
+            <LabelIconWrapper inlineLabel={inlineLabel}>
+              <SelectLabel inlineLabel={inlineLabel}>{ label }</SelectLabel>
+              <Icon name="ios-arrow-down" />
+            </LabelIconWrapper>
+          </TouchableOpacity>
+        </SelectWrapper>
+      )
+    }
   }
 }
 
