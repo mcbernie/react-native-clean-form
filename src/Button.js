@@ -9,10 +9,7 @@ import {
 } from 'react-native'
 import styled from 'styled-components/native'
 import PropTypes from 'prop-types'
-
-//import Icon from 'react-native-vector-icons/Ionicons'
-import { Ionicons } from '@expo/vector-icons';
-
+import Icon from 'react-native-vector-icons/Ionicons'
 import defaultTheme from './Theme'
 
 const ButtonWrapper = styled.View`
@@ -68,7 +65,7 @@ const Button = props => {
   if (icon || submitting) {
     const IconComponent = submitting
       ? <ActivityIndicator size="small" key="icon" color={theme.Button.color} />
-      : <Ionicons key="icon" name={icon} size={14} color={theme.Button.color} />
+      : <Icon key="icon" name={icon} size={14} color={theme.Button.color} />
 
     const prop = iconPlacement === 'left'
       ? 'marginRight'

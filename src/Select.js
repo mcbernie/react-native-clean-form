@@ -10,10 +10,7 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
-
-import { Ionicons } from '@expo/vector-icons';
-
-//import { default as BaseIcon } from 'react-native-vector-icons/Ionicons';
+import { default as BaseIcon } from 'react-native-vector-icons/Ionicons';
 import defaultTheme from './Theme'
 
 //import {OptionsModal} from './Dropdown';
@@ -50,7 +47,7 @@ SelectWrapper.defaultProps = {
   theme: defaultTheme
 }
 
-const Icon = styled(Ionicons)`
+const Icon = styled(BaseIcon)`
   height:10;
   width:10;
 `
