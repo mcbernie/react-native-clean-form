@@ -52,7 +52,7 @@ const FormGroup = props => {
   const children = React.Children.map(props.children, child => {
     let subsetOfProps = {}
     if (child.props.componentName === 'Input') {
-      const inputPropTypes = Object.keys(child.type.PropTypes)
+      const inputPropTypes = Object.keys(child.type.propTypes)
       subsetOfProps = _.pick(props, inputPropTypes);
     }
 
