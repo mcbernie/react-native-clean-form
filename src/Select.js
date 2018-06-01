@@ -195,7 +195,7 @@ class Select extends Component {
   }
 }
 
-Select.PropTypes = {
+Select.propTypes = {
   labelKey: PropTypes.string,
   placeholder: PropTypes.string,
   onValueChange: PropTypes.func.isRequired,

@@ -69,7 +69,7 @@ const FormGroup = props => {
   )
 }
 
-FormGroup.PropTypes = {
+FormGroup.propTypes = {
   border: PropTypes.bool,
   error: PropTypes.bool,
 }
