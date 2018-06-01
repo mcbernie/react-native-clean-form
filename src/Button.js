@@ -98,7 +98,7 @@ const Button = props => {
 
 Button.propTypes = {
   children: PropTypes.string.isRequired,
-  icon: PropTypes.string,
+  icon: PropTypes.bool,
   iconPlacement: PropTypes.oneOf(['left', 'right']),
   submitting: PropTypes.bool
 }
